@@ -48,7 +48,7 @@ const registerUser = asyncHandler(async (req, res) => {
     path: "/",
     httpOnly: true,
     expires: new Date(Date.now() + 2000 * 864000), // 1 day
-    
+      sameSite: "none",
     secure: true,
   });
 
@@ -98,7 +98,7 @@ const loginUser = asyncHandler(async (req, res) => {
   res.cookie("token", token, {
     path: "/",
     httpOnly: true,
-    expires: new Date(Date.now() + 1000 * 86400), // 1 day
+    expires: new Date(Date.now() + 2000 * 86400), // 1 day
     sameSite: "none",
     secure: true,
   });
@@ -159,7 +159,7 @@ const loginStatus = asyncHandler(async (req, res) => {
     return res.json(false);
   }
   // Verify Token
-  const verified = jwt.verify(token, process.env.JWT_SECRET);
+  const verified = jwt.verify(token);
   if (verified) {
     return res.json(true);
   }
