@@ -9,7 +9,7 @@ const contactRoute = require("./routes/contactRoute");
 const errorHandler = require("./middleWare/errorMiddleware");
 const cookieParser = require("cookie-parser");
 const path = require("path");
-mongoose.set('strictQuery', false);
+mongoose.set('strictQuery', true);
 const app = express();
 
 // Middlewares
