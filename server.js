@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://anika5.onrender.com"],
+    origin: ["http://localhost:3000", "https://anika1.onrender.com"],
     credentials: true,
   })
 );
