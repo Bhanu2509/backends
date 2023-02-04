@@ -9,9 +9,9 @@ const contactRoute = require("./routes/contactRoute");
 const errorHandler = require("./middleWare/errorMiddleware");
 const cookieParser = require("cookie-parser");
 const path = require("path");
-
+mongoose.set('strictQuery', false);
 const app = express();
-mongoose.set('strictquery', true);
+
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://pinvent-app.vercel.app"],
+    origin: ["http://localhost:3000", "https://anika1.onrender.com"],
     credentials: true,
   })
 );
